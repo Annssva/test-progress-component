@@ -41,6 +41,12 @@ p {
     margin: auto;
 }
 
+.progress-wrapper {
+    width: min(37vmin, 200px);
+    aspect-ratio: 1;
+    flex-shrink: 0;
+}
+
 @media (max-width: 600px) and (orientation: portrait) {
     .app-content {
         flex-direction: column;
