@@ -20,6 +20,7 @@ h1, p {
 .app {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: start;
     justify-content: start;
     padding: 20px;
@@ -28,4 +29,14 @@ h1, p {
 .app-title {
     font-size: 20px;
     font-weight: 400;
+}
+
+.app-content {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 60vw;
+    margin: auto;
 }
