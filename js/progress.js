@@ -24,28 +24,51 @@ function createProgress(element, value = 0) {
     circle.style.transform = 'rotate(-90deg)';
     circle.style.transformOrigin = '50% 50%';
 
+    let currentValue = 0;
+    let isAnimated = false;
+    let isHidden = false;
+
     function setValue(value) {
         if (!Number.isFinite(value) || value < 0 || value > 100) {
             return;
         }
 
+        currentValue = value;
+
         circle.style.strokeDashoffset =
             length - (length * value) / 100;
     }
 
-    function setAnimate(isAnimated) {
-        element.classList.toggle('progress--animated', isAnimated);
+    function getValue() {
+        return currentValue;
     }
 
-    function setHidden(isHidden) {
-        element.classList.toggle('progress--hidden', isHidden);
+    function setAnimate(value) {
+        isAnimated = value;
+        element.classList.toggle('progress--animated', value);
+    }
+
+    function getAnimate() {
+        return isAnimated;
+    }
+
+    function setHidden(value) {
+        isHidden = value;
+        element.classList.toggle('progress--hidden', value);
+    }
+
+    function getHidden() {
+        return isHidden;
     }
 
     setValue(value);
 
     return {
         setValue,
+        getValue,
         setAnimate,
-        setHidden
+        getAnimate,
+        setHidden,
+        getHidden
     };
 }
