@@ -21,6 +21,7 @@ function createProgress(element, value = 0) {
     const length = 2 * Math.PI * 45;
 
     circle.style.strokeDasharray = length;
+    circle.style.strokeDashoffset = length;
     circle.style.transform = 'rotate(-90deg)';
     circle.style.transformOrigin = '50% 50%';
 
