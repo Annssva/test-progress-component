@@ -1,9 +1,13 @@
+const initValue = 75;
+
 const progress = createProgress(
     document.querySelector('#progress'),
-    75
+    initValue
 );
 
 const valueInput = document.querySelector('#value-input');
+valueInput.value = initValue;
+
 const animateInput = document.querySelector('#animate-input');
 const hideInput = document.querySelector('#hide-input');
 
