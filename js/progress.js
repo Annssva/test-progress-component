@@ -33,9 +33,14 @@ function createProgress(element, value = 0) {
             length - (length * value) / 100;
     }
 
+    function setAnimate(isAnimated) {
+        element.classList.toggle('progress--animated', isAnimated);
+    }
+
     setValue(value);
 
     return {
-        setValue
+        setValue,
+        setAnimate
     };
 }
