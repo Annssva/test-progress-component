@@ -11,19 +11,28 @@ valueInput.value = initValue;
 const animateInput = document.querySelector('#animate-input');
 const hideInput = document.querySelector('#hide-input');
 
+function clampToRange(value) {
+    return Math.min(100, Math.max(0, value));
+}
+
 valueInput.addEventListener('input', () => {
-    const value = Number(valueInput.value);
+    valueInput.value = valueInput.value.replace(/\D/g, '');
 
-    if (!Number.isFinite(value)) {
-        return;
-    }
+    const rawValue = valueInput.value;
 
-    const normalizedValue = Math.min(100, Math.max(0, value));
+    const numericValue = rawValue === '' ? 0 : Number(rawValue);
 
-    valueInput.value = normalizedValue;
-    progress.setValue(normalizedValue);
+    progress.setValue(clampToRange(numericValue));
 });
 
+valueInput.addEventListener('blur', () => {
+    const rawValue = valueInput.value;
+    const numericValue = rawValue === '' ? 0 : Number(rawValue);
+    const finalValue = clampToRange(numericValue);
+
+    valueInput.value = finalValue;
+    progress.setValue(finalValue);
+});
 
 animateInput.addEventListener('change', () => {
     progress.setAnimate(animateInput.checked);
