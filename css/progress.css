@@ -1,6 +1,8 @@
+
 .progress {
-    width: 100%;
-    height: 100%;
+    width: min(37vmin, 200px);
+    aspect-ratio: 1;
+    flex-shrink: 0;
 }
 
 .progress__svg {
