@@ -25,7 +25,7 @@ function createProgress(element, value = 0) {
     circle.style.transformOrigin = '50% 50%';
 
     function setValue(value) {
-        if (value < 0 || value > 100) {
+        if (!Number.isFinite(value) || value < 0 || value > 100) {
             return;
         }
 

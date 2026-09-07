@@ -12,8 +12,18 @@ const animateInput = document.querySelector('#animate-input');
 const hideInput = document.querySelector('#hide-input');
 
 valueInput.addEventListener('input', () => {
-    progress.setValue(Number(valueInput.value));
+    const value = Number(valueInput.value);
+
+    if (!Number.isFinite(value)) {
+        return;
+    }
+
+    const normalizedValue = Math.min(100, Math.max(0, value));
+
+    valueInput.value = normalizedValue;
+    progress.setValue(normalizedValue);
 });
+
 
 animateInput.addEventListener('change', () => {
     progress.setAnimate(animateInput.checked);
