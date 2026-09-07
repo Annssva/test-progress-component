@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Progress Component</title>
         <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="./css/progress.css">
+        <link rel="stylesheet" href="./css/progress-component.css">
     </head>
     <body>
         <div class="app">
             <h1 class="app-text">Progress</h1>
 
             <div class="app-content">
-                <div class="progress-wrapper">
-                    <div id="progress" class="progress"></div>
+                <div class="app-progress-wrapper">
+                    <div id="progress" class="progress-component"></div>
                 </div>
             
                 <div class="controls">
@@ -30,13 +30,13 @@
                         <input id="animate-input" type="checkbox" />
                         <span class="switch__slider"></span>
                     </label>
-                    <span class="app-text">Animate</span>
+                    <label class="app-text" for="animate-input">Animate</label>
 
                     <label class="switch">
                         <input id="hide-input" type="checkbox" />
                         <span class="switch__slider"></span>
                     </label>
-                    <span class="app-text">Hide</span>
+                    <label class="app-text" for="hide-input">Hide</label>
                 </div>
             </div>
         </div>

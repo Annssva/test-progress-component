@@ -41,13 +41,13 @@ p {
     margin: auto;
 }
 
-.progress-wrapper {
+.app-progress-wrapper {
     width: min(37vmin, 200px);
     aspect-ratio: 1;
     flex-shrink: 0;
 }
 
-@media (max-width: 600px) and (orientation: portrait) {
+@media (orientation: portrait) {
     .app-content {
         flex-direction: column;
     }
@@ -74,16 +74,6 @@ p {
 
 .control__input:focus {
     border-color: #005dff;
-}
-
-.control__input::-webkit-inner-spin-button,
-.control__input::-webkit-outer-spin-button {
-    margin: 0;
-    -webkit-appearance: none;
-}
-
-.control__input {
-    appearance: textfield;
 }
 
 .switch {

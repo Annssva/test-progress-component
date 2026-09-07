@@ -1,34 +1,34 @@
 
-.progress {
+.progress-component {
     width: 100%;
     height: 100%;
 }
 
-.progress__svg {
+.progress-component__svg {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-.progress__circle {
+.progress-component__circle {
     fill: none;
     stroke-width: 8;
 }
 
-.progress__circle--background {
+.progress-component__circle--background {
     stroke: #eef3f6;
 }
 
-.progress__circle--value {
+.progress-component__circle--value {
     stroke: #005dff;
     transition: stroke-dashoffset 0.3s ease;
 }
 
-.progress--animated .progress__svg {
-    animation: progress-rotate 0.7s linear infinite;
+.progress-component--animated .progress-component__svg {
+    animation: progress-component-rotate 0.7s linear infinite;
 }
 
-@keyframes progress-rotate {
+@keyframes progress-component-rotate {
     from {
         transform: rotate(0deg);
     }
@@ -38,6 +38,6 @@
     }
 }
 
-.progress--hidden {
+.progress-component--hidden {
     display: none;
 }

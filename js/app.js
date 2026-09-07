@@ -1,6 +1,6 @@
 const initValue = 75;
 
-const progress = createProgress(
+const progress = Progress.create(
     document.querySelector('#progress'),
     initValue
 );
@@ -32,6 +32,12 @@ valueInput.addEventListener('blur', () => {
 
     valueInput.value = finalValue;
     progress.setValue(finalValue);
+});
+
+valueInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        valueInput.blur();
+    }
 });
 
 animateInput.addEventListener('change', () => {
