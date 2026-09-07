@@ -1,6 +1,6 @@
 const initValue = 75;
 
-const progress = Progress.create(
+const progress = ProgressComponent.create(
     document.querySelector('#progress'),
     initValue
 );

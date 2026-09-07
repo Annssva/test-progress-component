@@ -1,4 +1,4 @@
-const Progress = (() => {
+const ProgressComponent = (() => {
     function createProgress(element, value = 0) {
         element.innerHTML = `
             <svg
@@ -25,6 +25,7 @@ const Progress = (() => {
                 />
             </svg>
         `;
+        element.classList.add('progress-component');
 
         const circle = element.querySelector('.progress-component__circle--value');
         const length = 2 * Math.PI * 45;
@@ -57,8 +58,8 @@ const Progress = (() => {
         }
 
         function setAnimate(value) {
-            isAnimated = value;
-            element.classList.toggle('progress-component--animated', value);
+            isAnimated = Boolean(value);
+            element.classList.toggle('progress-component--animated', isAnimated);
         }
 
         function getAnimate() {
@@ -66,8 +67,8 @@ const Progress = (() => {
         }
 
         function setHidden(value) {
-            isHidden = value;
-            element.classList.toggle('progress-component--hidden', value);
+            isHidden = Boolean(value);
+            element.classList.toggle('progress-component--hidden', isHidden);
         }
 
         function getHidden() {
