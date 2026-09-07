@@ -37,10 +37,15 @@ function createProgress(element, value = 0) {
         element.classList.toggle('progress--animated', isAnimated);
     }
 
+    function setHidden(isHidden) {
+        element.classList.toggle('progress--hidden', isHidden);
+    }
+
     setValue(value);
 
     return {
         setValue,
-        setAnimate
+        setAnimate,
+        setHidden
     };
 }

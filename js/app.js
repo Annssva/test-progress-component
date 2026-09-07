@@ -4,3 +4,4 @@ const progress = createProgress(
 );
 
 progress.setAnimate(true);
+progress.setHidden(true);
