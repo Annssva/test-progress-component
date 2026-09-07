@@ -26,8 +26,8 @@ p {
     padding: 20px;
 }
 
-.app-title {
-    font-size: 20px;
+.app-text {
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -35,7 +35,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 60px;
     width: 100%;
     height: calc(100vh - 60px);
     margin: auto;
@@ -45,4 +45,84 @@ p {
     .app-content {
         flex-direction: column;
     }
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    align-items: center;
+}
+
+.control__input {
+    width: 50px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid black;
+    border-radius: 999px;
+    outline: none;
+    font: inherit;
+    text-align: center;
+    transition: border-color 0.2s ease;
+}
+
+.control__input:focus {
+    border-color: #005dff;
+}
+
+.control__input::-webkit-inner-spin-button,
+.control__input::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+.control__input {
+    appearance: textfield;
+}
+
+.switch {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.switch__slider {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: #d9dfe3;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.switch__slider::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+    transition: transform 0.2s ease;
+}
+
+.switch input:checked + .switch__slider {
+    background: #005dff;
+}
+
+.switch input:checked + .switch__slider::before {
+    transform: translateX(18px);
 }

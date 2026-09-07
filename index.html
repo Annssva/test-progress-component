@@ -9,9 +9,34 @@
     </head>
     <body>
         <div class="app">
-            <h1 class="app-title">Progress</h1>
+            <h1 class="app-text">Progress</h1>
 
-            <div class="app-content"><div id="progress" class="progress"></div></div>
+            <div class="app-content">
+                <div id="progress" class="progress"></div>
+            
+                <div class="controls">
+                    <input
+                        class="control__input"
+                        id="value-input"
+                        type="number"
+                        min="0"
+                        max="100"
+                        value="75"
+                    />
+                    <label class="app-text" for="value-input">Value</label>
+
+                    <label class="switch">
+                        <input id="animate-input" type="checkbox" />
+                        <span class="switch__slider"></span>
+                    </label>
+                    <span class="app-text">Animate</span>
+
+                    <label class="switch">
+                        <input id="hide-input" type="checkbox" />
+                        <span class="switch__slider"></span>
+                    </label>
+                    <span class="app-text">Hide</span>
+            </div>
         </div>
 
         <script src="./js/progress.js"></script>
