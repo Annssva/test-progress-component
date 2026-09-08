@@ -1,4 +1,4 @@
-const initValue = clampToRange(150);
+const initValue = clampToRange(75);
 
 const progress = ProgressComponent.create(
     document.querySelector('#progress'),
